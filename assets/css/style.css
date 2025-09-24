@@ -1,0 +1,126 @@
+h1 {
+    text-align: center;
+    color: #fff;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    margin-top: 32px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #181c24 0%, #23272f 100%);
+    color: #eaeaea;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+footer {
+    text-align: center;
+    padding: 16px 0;
+    background: transparent;
+    color: #888;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    border-top: 1px solid #222;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 0.95em;
+    backdrop-filter: blur(4px);
+}
+
+#user-table {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 0 80px 0;
+}
+
+#user-table table {
+    border-collapse: collapse;
+    background: linear-gradient(120deg, #23272f 80%, #181c24 100%);
+    box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+    border-radius: 16px;
+    overflow: hidden;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    animation: fadeInTable 0.8s cubic-bezier(.77,.2,.05,1) both;
+}
+
+@keyframes fadeInTable {
+    from { opacity: 0; transform: translateY(32px) scale(0.98);}
+    to { opacity: 1; transform: translateY(0) scale(1);}
+}
+
+#user-table th, #user-table td {
+    padding: 18px 10px;
+    text-align: middle;
+    transition: background 0.25s, color 0.25s;
+}
+
+#user-table thead {
+    background: linear-gradient(90deg, #222 60%, #333 100%);
+    color: #fff;
+}
+
+#user-table th {
+    font-size: 1em;
+    font-weight: 600;
+    border-bottom: 1px solid #333;
+    letter-spacing: 0.2px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.18);
+}
+
+#user-table tbody tr {
+    border-bottom: 1px solid #222;
+    transition: background 0.25s, box-shadow 0.25s;
+}
+
+#user-table tbody tr:hover {
+    background: linear-gradient(90deg, #23272f 70%, #181c24 100%);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    transform: scale(1.01);
+}
+
+#user-table td img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border: 2px solid #333;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    background: #23272f;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+#user-table tbody tr:hover td img {
+    border-color: #444;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+}
+
+@media (max-width: 700px) {
+    #user-table table, #user-table thead, #user-table tbody, #user-table th, #user-table td, #user-table tr {
+        display: block;
+        width: 100%;
+    }
+    #user-table thead {
+        display: none;
+    }
+    #user-table td {
+        position: relative;
+        padding-left: 48%;
+        min-height: 48px;
+        border-bottom: 1px solid #222;
+        background: linear-gradient(90deg, #23272f 80%, #181c24 100%);
+    }
+    #user-table td:before {
+        position: absolute;
+        left: 16px;
+        top: 16px;
+        width: 45%;
+        white-space: nowrap;
+        font-weight: 600;
+        color: #fff;
+        content: attr(data-label);
+        font-size: 0.98em;
+        text-shadow: 0 1px 4px rgba(0,0,0,0.18);
+    }
+}
