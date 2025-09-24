@@ -1,5 +1,5 @@
 let nbUsers = 5;
-let endpoint = `https://randomuser.me/api/?results=${nbUsers}&nat=fr`;
+let endpoint = `https://randomuser.me/api/?results=${nbUsers}`;
 
 fetch(endpoint)
     .then(function (response) {
@@ -48,6 +48,7 @@ fetch(endpoint)
                 }
 
                 let countryCode = user.nat ? user.nat.toLowerCase() : '';
+                // URL du drapeau basé sur le code pays
                 let flagUrl = countryCode ? `https://flagcdn.com/256x192/${countryCode}.png` : '';
 
                 const row = document.createElement('tr');
